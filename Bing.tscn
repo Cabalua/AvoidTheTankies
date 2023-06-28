@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://words.tscn" type="PackedScene" id=3]
+[ext_resource path="res://words.gd" type="Script" id=4]
+[ext_resource path="res://main.gd" type="Script" id=5]
+[ext_resource path="res://lmroman5-regular.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 50
+font_data = ExtResource( 6 )
+
+[node name="MAIN" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+
+[node name="paral_back" parent="." instance=ExtResource( 3 )]
+
+[node name="words" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="UI" parent="." instance=ExtResource( 2 )]
+margin_right = 0.0
+
+[node name="message" type="Label" parent="."]
+margin_left = 228.0
+margin_top = 223.0
+margin_right = 956.0
+margin_bottom = 417.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+
+[connection signal="new_game" from="." to="words" method="_on_MAIN_new_game"]
+[connection signal="new_game" from="." to="UI" method="_on_MAIN_new_game"]
+[connection signal="play" from="." to="words" method="_on_MAIN_play"]
+[connection signal="play" from="." to="UI" method="_on_MAIN_play"]
+[connection signal="body_shape_entered" from="player" to="player" method="_on_player_body_shape_entered"]
+[connection signal="body_shape_entered" from="player" to="words" method="_on_player_body_shape_entered"]
+[connection signal="body_shape_exited" from="player" to="words" method="_on_player_body_shape_exited"]
+[connection signal="i_was_hit" from="player" to="UI" method="_on_player_i_was_hit"]
+[connection signal="stop_playing" from="player" to="." method="_on_player_stop_playing"]
+[connection signal="stop_playing" from="player" to="player" method="_on_player_stop_playing"]
+[connection signal="stop_playing" from="player" to="words" method="_on_player_stop_playing"]
+[connection signal="stop_playing" from="player" to="UI" method="_on_player_stop_playing"]
+[connection signal="i_hit_you" from="words" to="UI" method="_on_words_i_hit_you"]

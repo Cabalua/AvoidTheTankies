@@ -1,0 +1,131 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://coutTheDown.gd" type="Script" id=1]
+[ext_resource path="res://UI.gd" type="Script" id=2]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+margin_left = 701.0
+margin_top = 145.0
+margin_right = 845.0
+margin_bottom = 227.0
+
+[node name="GridContainer" type="GridContainer" parent="VSplitContainer"]
+margin_right = 144.0
+margin_bottom = 50.0
+columns = 3
+
+[node name="cell_1" type="Label" parent="VSplitContainer/GridContainer"]
+margin_right = 46.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 1"
+align = 1
+valign = 1
+
+[node name="cell_2" type="Label" parent="VSplitContainer/GridContainer"]
+margin_left = 50.0
+margin_right = 95.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 2"
+align = 1
+valign = 1
+
+[node name="cell_3" type="Label" parent="VSplitContainer/GridContainer"]
+margin_left = 99.0
+margin_right = 144.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 3"
+align = 1
+valign = 1
+
+[node name="cell_4" type="Label" parent="VSplitContainer/GridContainer"]
+margin_top = 18.0
+margin_right = 46.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 4"
+align = 1
+valign = 1
+
+[node name="cell_5" type="Label" parent="VSplitContainer/GridContainer"]
+margin_left = 50.0
+margin_top = 18.0
+margin_right = 95.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 5"
+align = 1
+valign = 1
+
+[node name="cell_6" type="Label" parent="VSplitContainer/GridContainer"]
+margin_left = 99.0
+margin_top = 18.0
+margin_right = 144.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 6"
+align = 1
+valign = 1
+
+[node name="cell_7" type="Label" parent="VSplitContainer/GridContainer"]
+margin_top = 36.0
+margin_right = 46.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 7"
+align = 1
+valign = 1
+
+[node name="cell_8" type="Label" parent="VSplitContainer/GridContainer"]
+margin_left = 50.0
+margin_top = 36.0
+margin_right = 95.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 8"
+align = 1
+valign = 1
+
+[node name="cell_9" type="Label" parent="VSplitContainer/GridContainer"]
+margin_left = 99.0
+margin_top = 36.0
+margin_right = 144.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cell 9"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer"]
+margin_top = 62.0
+margin_right = 144.0
+margin_bottom = 82.0
+
+[node name="coutTheDown" type="Label" parent="VSplitContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 53.0
+margin_bottom = 17.0
+text = "Countup"
+script = ExtResource( 1 )
+
+[node name="neustart" type="Button" parent="VSplitContainer/HBoxContainer"]
+margin_left = 57.0
+margin_right = 126.0
+margin_bottom = 20.0
+text = "Nochmal"
