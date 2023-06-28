@@ -38,6 +38,7 @@ func _input(event):
 func _on_player_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	#emit_signal("who_hit_me")
 	touching += 1
+	print(touching)
 	emit_signal("i_was_hit")
 
 	

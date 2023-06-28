@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://coutTheDown.gd" type="Script" id=1]
 [ext_resource path="res://UI.gd" type="Script" id=2]
@@ -20,6 +20,11 @@
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_color = Color( 0.223529, 1, 0, 1 )
 font_data = ExtResource( 14 )
 
 [node name="UI" type="Control"]
@@ -162,11 +167,13 @@ script = ExtResource( 1 )
 [node name="Timer" type="Timer" parent="count_up_label"]
 script = ExtResource( 13 )
 
-[node name="record" type="Button" parent="."]
+[node name="record" type="Label" parent="."]
 margin_top = 400.0
 margin_right = 125.0
 margin_bottom = 600.0
-text = "Nochmal"
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
 script = ExtResource( 15 )
 
 [connection signal="start_again" from="." to="count_up_label/Timer" method="_on_UI_start_again"]

@@ -1,4 +1,4 @@
-extends Button
+extends Label
 
 
 # Declare member variables here. Examples:

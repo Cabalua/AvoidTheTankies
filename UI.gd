@@ -23,6 +23,9 @@ signal weitergabe_signal
 signal stopp_countup
 signal start_again
 
+
+
+# hier später die richtigen Wörter einsetzen
 const word_name_1 = "erster"
 const word_name_2 = "zweiter"
 const word_name_3 = "der Dritte"
@@ -32,7 +35,11 @@ const word_name_6 = "der Sechste"
 const word_name_7 = "der siebte"
 const word_name_8 = "der achte"
 const word_name_9 = "der neunte"
-#
+
+
+
+
+
 
 func _ready(): 
 	
@@ -73,15 +80,24 @@ func delete_cells():
 			var label = child as Label
 			label.text = ""
 
+
+
+# Signale erhalten
+
 func _on_MAIN_play():
 	#print("UI hat Signal erhalten") 
 	emit_signal("weitergabe_signal")
 
+
+func _on_MAIN_new_game():
+	emit_signal("start_again")
+
+
 func _on_player_stop_playing():
 	delete_cells()
+	count = 0
 	#print("UI hat Stopp-Signal erhalten") #müsste kommen wenn < 9
 	emit_signal("stopp_countup")
-
 
 
 
@@ -137,5 +153,3 @@ func _on_player_stop_playing():
 # 	emit_signal("to_cell_4", word_name_4)
 
 
-func _on_MAIN_new_game():
-	emit_signal("start_again")
